@@ -5,6 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Student {
@@ -13,6 +17,8 @@ public class Student {
 	int id;
 	String name;
 	String nickName;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="dd/MM/YYYY")
 	Date doj;
 	Double fee;
 	Double cgpa;
